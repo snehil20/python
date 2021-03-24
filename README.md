@@ -8,3 +8,6 @@ primenumber.py script is use for finding wether the number is a prime or not. Th
 
 
 parent.py script analyses the names of father and sons and tell us who is the father of whom. It can take any numer of data and give us multilple relations based on that.
+
+
+python series directory contains various python program to impliment various series like; fibonnaci series and other series
