@@ -1,4 +1,4 @@
-# for series 1,4,7,10......
+# for series 1,4,7,10......(fibonnaci series)
 a=1
 b=4
 print(a)                                               
