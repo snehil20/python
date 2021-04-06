@@ -13,3 +13,5 @@ parent.py script analyses the names of father and sons and tell us who is the fa
 python series directory contains various python program to impliment various series like; fibonnaci series and other series
 
 upto_100.py can print numbers upto 100 without using a single number iside the code "not even in range function"
+
+Mahindra.py: Sollution for the interview programming question in Tech Mahindra 2021
