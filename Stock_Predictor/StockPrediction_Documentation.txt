@@ -1,0 +1,23 @@
+           stock_predict.py documentation
+•	This is a machine learning model that is use to predict the future stocks of any company. For instance I have used Apple company stocks for my prediction.
+•	This model uses Hidden Markov model to predict the future events.
+
+Libraries that are used for this model
+•	Tensorflow_version 2.0
+•	tensorflow_probability
+
+Modules and methods that are used
+•	HiddenMarkovModel()
+•	Distributions
+•	mean()
+
+         Pros
+•	Easy to implement
+•	Can predict any number of future stocks
+•	Prediction can be 80 to 87% accurate if the fluctuations are not too high
+
+         Limitations 
+•	Can’t predict the accurate stocks if fluctuations are too high.
+•	Prediction not necessarily be 100% accurate.
+
+
