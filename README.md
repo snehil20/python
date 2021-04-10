@@ -15,3 +15,5 @@ python series directory contains various python program to impliment various ser
 upto_100.py can print numbers upto 100 without using a single number iside the code "not even in range function"
 
 Mahindra.py: Sollution for the interview programming question in Tech Mahindra 2021
+
+stock_predictor is a machine learning model for predicting future stocks
