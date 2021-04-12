@@ -17,3 +17,6 @@ upto_100.py can print numbers upto 100 without using a single number iside the c
 Mahindra.py: Sollution for the interview programming question in Tech Mahindra 2021
 
 stock_predictor is a machine learning model for predicting future stocks
+
+
+Image_identifier.py is a machine learning model based on basic nueral networks. Which can be use for both image identification and image scanning.
