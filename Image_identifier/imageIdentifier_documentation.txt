@@ -2,7 +2,7 @@
 Image identifier documentation
 •	This machine learning model is capable to predict the correct image from a large data set of various images.
 •	This model can be also use for image scanning applications.
-•	This model is based on  a basic neural network
+•	This model is based on  a basic dense neural network
 
 Libraries and models I used in this model:
 •	tensorflow_version 2.0
