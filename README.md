@@ -22,3 +22,7 @@ stock_predictor is a machine learning model for predicting future stocks
 Image_identifier.py is a machine learning model based on basic nueral networks. Which can be use for both image identification and image scanning.
 
 CNN_model: A basic CNN model for image identification using CIFAR-10 datasheet
+
+
+ Bag of words: A simple algorithm to find the frequency of each word in a paragraph or in a dataset.
+ can be use to feed the data to RNN based machine learning model
