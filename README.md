@@ -26,3 +26,5 @@ CNN_model: A basic CNN model for image identification using CIFAR-10 datasheet
 
  Bag of words: A simple algorithm to find the frequency of each word in a paragraph or in a dataset.
  can be use to feed the data to RNN based machine learning model
+
+Encoder_Decoder_NLP: This is a algorithm that can be use to encode words of a textual data to an intiger,float or vector before feding it to a NLP model. 
