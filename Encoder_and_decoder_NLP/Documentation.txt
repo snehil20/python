@@ -1,0 +1,5 @@
+Wondering how to fed your textual data to your nlp model. Here is the sollution
+
+This is a algorithm that can be use to encode words of a textual data to an intiger,float or vector before feding it to a NLP model. 
+It can also convert those encoded words to its default values.(Can be applied at the output of the model)
+The words.txt file contains millions of english words.
