@@ -1,0 +1,80 @@
+#sentiment analysis
+#to check if the reviws are +ve or -ve
+from keras.datasets import imdb
+from keras.preprocessing import sequence
+import keras
+import tensorflow as tf
+import os
+import numpy as np
+import sys
+VOCABULARY_SIZE = 88584 # It is number for the least common word in our dataset. As imdb is encoded in the way how much the word is common
+
+MAXIMUM_LEN = 250  #This is the size which we need to convert all of our reviews to/Basically for padding
+BATCH_SIZE = 64
+
+(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words = VOCABULARY_SIZE)   #loading dataset
+train_data = sequence.pad_sequences(train_data, MAXIMUM_LEN)     #padding
+test_data = sequence.pad_sequences(test_data, MAXIMUM_LEN)
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Embedding(VOCABULARY_SIZE, 32),             #adding various layers: Embedding, LSTM
+    tf.keras.layers.LSTM(32),
+    tf.keras.layers.Dense(1, activation="sigmoid")         #Squesing data b/w 0 and 1
+])
+#model.summay().....check the layers if required
+model.compile(loss="binary_crossentropy",optimizer="rmsprop",metrics=['acc'])   #compiling and applying loss and optimizer functios
+
+history = model.fit(train_data, train_labels, epochs=10, validation_split=0.2) #training change the epochs for more accuracy
+results = model.evaluate(test_data, test_labels)
+#print(results) ....check accuracy of the model
+
+
+word_index = imdb.get_word_index()                  #get index value of each word in our imdb dataset
+#encoding
+def encode_text(text):
+  tokens = keras.preprocessing.text.text_to_word_sequence(text)
+  tokens = [word_index[word] if word in word_index else 0 for word in tokens]
+  return sequence.pad_sequences([tokens], MAXIMUM_LEN)[0]
+
+text = "that movie was just amazing, so amazing"
+encoded = encode_text(text)
+
+
+reverse_word_index = {value: key for (key, value) in word_index.items()}
+
+#decoding
+def decode_integers(integers):
+    PAD = 0
+    text = ""
+    for num in integers:
+        if num != PAD:
+            text += reverse_word_index[num] + " "
+
+    return text[:-1]
+
+
+def predict(text):
+  encoded_text = encode_text(text)
+  pred = np.zeros((1,250))
+  pred[0] = encoded_text
+  result = model.predict(pred)
+  global b
+  b=result[0]
+
+print("Type 'stop' to exit")
+def review():
+ global inputReview
+ inputReview = str(input("Write your review :"))
+ if inputReview == "stop":
+     sys.exit()
+ predict(inputReview)
+
+ if b > 0.5:
+      print("Your review  is positive")
+ elif b < 0.5:
+      print("Your review is negetive")
+
+
+
+while True:             #To make model accept multiple reviews and to stop training for each input
+    review()
